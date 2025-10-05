@@ -809,6 +809,7 @@ section{
   left: 50%;
   transform: translateX(-50%);
   background: rgba(16, 16, 16, 0.95);
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   border: 1px solid var(--main-color);
   border-radius: 1rem;
@@ -821,6 +822,12 @@ section{
   box-shadow: 0 0 25px rgba(234, 88, 12, 0.6);
   text-align: center;
   pointer-events: none; /* prevents flicker when hovering */
+}
+
+@supports not (backdrop-filter: blur(10px)) {
+  .circle-popup {
+    background: rgba(30, 30, 30, 0.98); /* Solid background as fallback */
+  }
 }
 
 /* Popup arrow */
