@@ -38,7 +38,7 @@ if (spanElement) {
   typeText();
 }
 
-// Skills Chart
+// Skills Chart and all other functionality
 document.addEventListener('DOMContentLoaded', function() {
   // Initialize skill bars animation
   function animateSkillBars() {
@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', function() {
     observer.observe(skillsSection);
   }
   
-  // Mobile menu toggle
+  // Mobile menu toggle - SINGLE IMPLEMENTATION
   const menuIcon = document.getElementById("menu-icon");
   const navbar = document.querySelector(".navbar");
 
@@ -93,6 +93,8 @@ document.addEventListener('DOMContentLoaded', function() {
       // Reset icon to hamburger menu
       if (menuIcon.classList.contains("bx-x")) {
         menuIcon.classList.replace("bx-x", "bx-menu");
+      } else {
+        menuIcon.classList.remove("open");
       }
     }
   }
@@ -105,8 +107,10 @@ document.addEventListener('DOMContentLoaded', function() {
       // Toggle between hamburger and X icons
       if (menuIcon.classList.contains("bx-menu")) {
         menuIcon.classList.replace("bx-menu", "bx-x");
-      } else {
+      } else if (menuIcon.classList.contains("bx-x")) {
         menuIcon.classList.replace("bx-x", "bx-menu");
+      } else {
+        menuIcon.classList.toggle("open");
       }
     });
 
