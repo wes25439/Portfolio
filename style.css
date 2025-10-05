@@ -920,7 +920,7 @@ section{
   }
 
   .circle-content span {
-    font-size: 3rem;
+    font-size: 1.5rem;
 
   }
 
@@ -930,7 +930,7 @@ section{
   }
 
   .circle-content i {
-    font-size: 3rem;
+    font-size: 2rem;
   }
 
   .analytics-section h1 {
@@ -1034,11 +1034,12 @@ section{
   }
 
   .circle-content i {
-    font-size: 1.8rem;
+    font-size: 3rem;
   }
-
+  
+  
   .circle-content span {
-    font-size: 1rem;
+    font-size: 1.6rem;
   }
 
   .about-content h2,
@@ -1051,4 +1052,8 @@ section{
     padding: 1.2rem 3rem;
     font-size: 1.6rem;
   }
+
+   .analytics-section h1{
+    margin-top: 29%; /* Reduce top margin for small screens */
+   }
 }
