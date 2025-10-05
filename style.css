@@ -764,239 +764,240 @@ section{
   color: #ccc;
 }
 
-/* Responsive adjustments */
+/* ============================= */
+/* 📱 FULL RESPONSIVE DESIGN FIX */
+/* ============================= */
+
+@media (max-width: 1200px) {
+  html {
+    font-size: 55%;
+  }
+
+  section {
+    padding: 8rem 10%;
+  }
+
+  .home {
+    gap: 8rem;
+  }
+}
+
 @media (max-width: 991px) {
+  header {
+    padding: 3rem 10%;
+  }
+
+  .home {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 3rem;
+  }
+
+  .home-content {
+    align-items: center;
+  }
+
+  .home-content h1 {
+    font-size: 5rem;
+  }
+
+  .home-content h3 {
+    font-size: 3rem;
+  }
+
+  .home-img img {
+    width: 45vw;
+    height: 45vw;
+  }
+
+  /* Navbar show/hide */
+  #menu-icon {
+    display: block;
+  }
+
+  .navbar {
+    display: none;
+  }
+
+  .navbar.show {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    padding: 2rem 0;
+  }
+
+  .navbar a {
+    margin: 1rem 0;
+    font-size: 2rem;
+  }
+}
+
+/* ========================== */
+/* 📱 Mobile Devices (≤768px) */
+/* ========================== */
+@media (max-width: 768px) {
+  html {
+    font-size: 50%;
+  }
+
+  section {
+    padding: 7rem 6%;
+  }
+
+  /* Header adjustments */
+  .header {
+    padding: 2rem 6%;
+  }
+
+  .gradient-button {
+    display: none; /* Hide 'Contact Me' button on very small screens */
+  }
+
+  /* Home */
+  .home-content h1 {
+    font-size: 4rem;
+  }
+
+  .home-content h3 {
+    font-size: 2.5rem;
+  }
+
+  .home-img img {
+    width: 60vw;
+    height: 60vw;
+  }
+
+  /* About Section */
   .about {
     flex-direction: column;
     text-align: center;
-  }
-  
-  .skills-container {
-    display: flex;
-    flex-direction: column;
     align-items: center;
   }
-  
-  .skill-header {
-    justify-content: center;
-  }
-  
-  .skill-name {
+
+  .about-content h2 {
     text-align: center;
+    margin-bottom: 2rem;
   }
-  
-  .analytics-section {
-    justify-content: center;
-    margin-top: 3rem;
-  }
-  
-  .circular-analytics {
-    flex-direction: row;
-  }
-}
-.analytics-section h1 {
-  font-size: 7rem;
-  margin-bottom: 2rem;
-  color: var(--main-color);
-  text-align: center;
-}
 
-/* ===========================
-   RESPONSIVE LAYOUT (APPEND)
-   =========================== */
-
-/* Global adjustments for readable type on small screens */
-html { font-size: 55%; }
-@media (max-width:1200px) { html { font-size: 52%; } }
-@media (max-width:991px)  { html { font-size: 50%; } }
-@media (max-width:480px)  { html { font-size: 45%; } }
-
-/* ---------- Header & Nav ---------- */
-.header {
-  padding: 2rem 6%; /* narrower padding on smaller screens */
-}
-
-
-
-/* mobile nav style - hidden until activated */
-.navbar {
-  display: flex;
-  gap: 2rem;
-}
-.navbar a {
-  white-space: nowrap;
-}
-
-/* ---------- HOME ---------- */
-.home {
-  gap: 6rem;
-  padding-top: 10rem;
-}
-.home-img img {
-  width: 260px;
-  height: 260px;
-  border-radius: 50%;
-}
-
-/* ---------- ABOUT ---------- */
-.about {
-  padding: 6rem 6%;
-}
-
-/* ---------- SERVICES ---------- */
-.services {
-  padding: 6rem 6%;
-}
-.services h2 { font-size: 3.2rem; }
-
-/* reduce card height on smaller screens */
-.service-box { height: 350px; padding: 2rem; }
-@media (max-width: 768px) {
-  .service-box { height: auto; padding: 2.5rem 1.5rem; }
-  .service-info { padding: 2rem; }
-  .service-info h4 { font-size: 2.6rem; }
-  .service-info p { font-size: 1.2rem; }
-  .service-info i { font-size: 5.2rem; margin-bottom: 1rem; }
-}
-
-/* ---------- Projects ---------- */
-.projects {
-  padding: 4rem 6%;
-}
-.projects-box {
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 2rem;
-  padding-bottom: 4rem;
-}
-.project-card { min-height: 380px; padding: 2rem; }
-
-/* ---------- CONTACT ---------- */
-.contact {
-  padding: 4rem 6%;
-}
-.contact form {
-  flex-direction: column;
-  gap: 1.5rem;
-}
-.contact form .input-box { width: 100%; display:block; }
-.contact input, .contact textarea {
-  width: 100%;
-  font-size: 1.6rem;
-  padding: 1.6rem;
-}
-
-/* ---------- FOOTER ---------- */
-.footer { padding: 3rem 6%; font-size: 1.4rem; }
-
-/* ---------- SKILLS & ANALYTICS ---------- */
-/* ====== MOBILE RESPONSIVENESS FIX FOR MY SKILLS ====== */
-@media (max-width: 768px) {
+  /* Skills bars full width */
   .skills-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;       /* Centers horizontally */
-    justify-content: center;
     width: 100%;
-    padding: 0 1rem;   
-    margin-left: 25%;        /* Add a bit of side padding */
-  }
-
-  .skill {
-    width: 100%;               /* Full width on mobile */
-    max-width: 600px;          /* Optional limit for cleaner look */
-    text-align: center;        /* Center text */
-  }
-
-  .skill-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    
+    padding: 0 2rem;
   }
 
   .skill-bar {
     width: 100%;
-    height: 10px;
-    background: #1e1e1e;      /* Dark background for progress track */
-    border-radius: 10px;
-    margin-top: 10px;
-    overflow: hidden;
   }
 
-  .skill-fill {
-    height: 100%;
-    background: var(--main-color);
-    border-radius: 10px;
-    transition: width 0.5s ease-in-out;
+  /* Circular Analytics - 2x2 grid */
+  .circular-analytics {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 9rem;
+    justify-items: center;
+    margin-top: 20px;
   }
 
- .skills .heading {
-  text-align: center;
-  width: 100%;
-  display: block;
-  margin: 0 auto;
-  justify-content: center;
-}
+  .analytic-circle {
+    width: 120px;
+    height: 120px;
+  }
 
- .about-content h3 {
-    text-align: center; /* moves header to the middle */
+  .circle-content i {
+    font-size: 2rem;
+  }
+
+  .analytics-section h1 {
+    font-size: 3rem;
+    margin-top: 20rem;
+  }
+
+  /* Services Section */
+  .services-container {
+    grid-template-columns: 1fr;
+  }
+
+  .service-box {
+    height: auto;
+    padding: 3rem 2rem;
+  }
+
+  /* Projects Section */
+  .projects-box {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card {
+    min-height: auto;
+  }
+
+  /* Contact Section */
+  .contact form {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .contact form .input-box {
     width: 100%;
-    display: block;
+  }
 
-    margin-right: 25px;
+  .contact form input,
+  .contact form textarea {
+    width: 100%;
+  }
+
+  /* Footer */
+  .footer .social-icons {
+    flex-wrap: wrap;
+  }
+
+  .footer .list {
+    flex-direction: column;
+    gap: 0.5rem;
   }
 }
 
+/* =============================== */
+/* 📱 Small Devices (≤480px) */
+/* =============================== */
+@media (max-width: 480px) {
+  html {
+    font-size: 45%;
+  }
 
-/* analytics circles scale down */
+  .home-content h1 {
+    font-size: 3.5rem;
+  }
 
+  .home-content p {
+    font-size: 1.4rem;
+  }
 
-@media (max-width: 768px) {
-  .analytics-section { grid-template-columns: repeat(2, 1fr); max-width: 680px; }
-}
-/* ---------- TWO-BY-TWO SERVICES GRID ---------- */
-/* keep your 2x2 grid, but responsive breakpoints */
-@media (max-width: 1024px) {
-  .services-container { grid-template-columns: repeat(2, 1fr); max-width: 1000px; }
-}
-@media (max-width: 768px) {
-  .services-container { grid-template-columns: 1fr; max-width: 680px; }
-}
+  .analytic-circle {
+    width: 100px;
+    height: 100px;
+  }
 
-/* ---------- MOBILE NAV BEHAVIOR ---------- */
-@media (max-width: 900px) {
-  /* show menu icon */
- 
+  .circle-content i {
+    font-size: 1.8rem;
+  }
 
-  /* hide default nav & button */
-  .navbar { display: none; position: absolute; top: 100%; left: 0; right: 0; background: rgba(0,0,0,0.95); flex-direction: column; gap: 0; padding: 2rem 6%; border-top: 1px solid rgba(255,255,255,0.03); }
-  .navbar.show { display: flex; }
-  .navbar a { padding: 1rem 0; font-size: 2rem; border-bottom: 1px solid rgba(255,255,255,0.03); }
+  .circle-content span {
+    font-size: 1rem;
+  }
 
-  .gradient-button { display: none; } /* hide contact CTA in header on mobile */
-  .header { padding: 2rem 4%; align-items: center; }
+  .about-content h2,
+  .analytics-section h1,
+  .heading {
+    font-size: 4rem;
+  }
 
-  /* home layout stacks */
-  .home { flex-direction: column-reverse; gap: 3.5rem; padding: 12rem 4% 6rem; text-align: center; }
-  .home-content { align-items: center; text-align: center; }
-  .home-content h1 { font-size: 4.2rem; }
-  .home-content h3 { font-size: 2.4rem; }
-  .home-img img { width: 220px; height: 220px; }
-}
-
-/* ---------- VERY SMALL DEVICES ---------- */
-@media (max-width: 420px) {
-  html { font-size: 42%; }
-  .home-img img { width: 180px; height: 180px; }
-  .home-content h1 { font-size: 3.6rem; }
-  .service-info h4 { font-size: 2.2rem; }
-  .service-info p { font-size: 1.05rem; }
-}
-
-/* ---------- Small polish: keep big paddings reasonable ---------- */
-@media (max-width: 1200px) {
-  section { padding: 8rem 8%; }
-}
-@media (max-width: 991px) {
-  section { padding: 6rem 6%; }
+  .btn {
+    padding: 1.2rem 3rem;
+    font-size: 1.6rem;
+  }
 }
