@@ -602,6 +602,11 @@ section{
   margin: 2rem 0;
 }
 
+.skills-container h2{
+  font-size: 6rem;
+  margin-top: 11%;
+}
+
 .skill {
   margin-bottom: 1.5rem;
 }
@@ -683,7 +688,17 @@ section{
   flex-direction: column;
   align-items: center;
   margin-top: 4.5%;
+   position: relative; 
+  z-index: 1; 
   
+}
+
+.analytics-section h1 {
+  text-align: center;
+  font-size: 6.5rem; /* Adjust as needed */
+  margin-bottom: 2rem; /* Add proper spacing */
+  position: relative; /* Prevent interference */
+  z-index: 2; /* Ensure it's above other elements */
 }
 
 .circular-analytics {
@@ -799,6 +814,7 @@ section{
 
   .home-content h1 {
     font-size: 5rem;
+    
   }
 
   .home-content h3 {
