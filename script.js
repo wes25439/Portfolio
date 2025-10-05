@@ -99,3 +99,34 @@ if (menuIcon && navbar) {
   });
 }
 
+/* ===============================
+   📱 Circle Popup Click Handler
+   Keeps popup visible on click/tap
+================================== */
+document.addEventListener('DOMContentLoaded', () => {
+  const circles = document.querySelectorAll('.analytic-circle');
+
+  circles.forEach(circle => {
+    const popup = circle.querySelector('.circle-popup');
+
+    // Toggle popup on click/tap
+    circle.addEventListener('click', (e) => {
+      e.stopPropagation();
+
+      // Close other popups
+      document.querySelectorAll('.circle-popup').forEach(p => {
+        if (p !== popup) {
+          p.classList.remove('show');
+        }
+      });
+
+      // Toggle this one
+      popup.classList.toggle('show');
+    });
+  });
+
+  // Close all when clicking outside
+  document.addEventListener('click', () => {
+    document.querySelectorAll('.circle-popup').forEach(p => p.classList.remove('show'));
+  });
+});
