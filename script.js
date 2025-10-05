@@ -1,9 +1,11 @@
+// Text animation code
 const words = [
   "Frontend Designer",
-  "Web Designer",
+  "Web Designer....",
   "UI/UX Designer",
-  "Web Developer",
-  "Software Tester"
+  "Web Developer..",
+  "Software Tester",
+  "Cloud Practitioner"
 ];
 
 let wordIndex = 0;
@@ -31,9 +33,10 @@ function eraseText() {
   }
 }
 
-typeText();
-
-// Skills Chart
+// Start text animation only if span element exists
+if (spanElement) {
+  typeText();
+}
 
 // Skills Chart
 document.addEventListener('DOMContentLoaded', function() {
@@ -78,24 +81,78 @@ document.addEventListener('DOMContentLoaded', function() {
   if (skillsSection) {
     observer.observe(skillsSection);
   }
-});
+  
+  // Mobile menu toggle
+  const menuIcon = document.getElementById("menu-icon");
+  const navbar = document.querySelector(".navbar");
 
-/* ============ Mobile menu toggle ============ */
-const menuIcon = document.getElementById("menu-icon");
-const navbar = document.querySelector(".navbar");
-
-if (menuIcon && navbar) {
-  menuIcon.addEventListener("click", () => {
-    navbar.classList.toggle("show");
-    menuIcon.classList.toggle("open");
-  });
-
-  // Close nav when a link is clicked (mobile)
-  navbar.querySelectorAll("a").forEach(a => {
-    a.addEventListener("click", () => {
+  // Function to close menu
+  function closeMenu() {
+    if (navbar && menuIcon) {
       navbar.classList.remove("show");
-      menuIcon.classList.remove("open");
+      // Reset icon to hamburger menu
+      if (menuIcon.classList.contains("bx-x")) {
+        menuIcon.classList.replace("bx-x", "bx-menu");
+      }
+    }
+  }
+
+  // Toggle menu
+  if (menuIcon && navbar) {
+    menuIcon.addEventListener("click", () => {
+      navbar.classList.toggle("show");
+      
+      // Toggle between hamburger and X icons
+      if (menuIcon.classList.contains("bx-menu")) {
+        menuIcon.classList.replace("bx-menu", "bx-x");
+      } else {
+        menuIcon.classList.replace("bx-x", "bx-menu");
+      }
+    });
+
+    // Close nav when a link is clicked (mobile)
+    navbar.querySelectorAll("a").forEach(a => {
+      a.addEventListener("click", () => {
+        closeMenu();
+      });
+    });
+  }
+
+  // Hide menu when scrolling
+  let lastScrollY = window.scrollY;
+  let ticking = false;
+
+  function updateMenuVisibility() {
+    // Close menu if it's open while scrolling
+    if (navbar && navbar.classList.contains("show")) {
+      closeMenu();
+    }
+    
+    ticking = false;
+  }
+
+  function onScroll() {
+    lastScrollY = window.scrollY;
+    if (!ticking) {
+      window.requestAnimationFrame(updateMenuVisibility);
+      ticking = true;
+    }
+  }
+
+  window.addEventListener("scroll", onScroll);
+
+  // Smooth scrolling for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener("click", function(e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute("href"));
+      if (target) {
+        target.scrollIntoView({
+          behavior: "smooth"
+        });
+        // Close menu after navigation
+        closeMenu();
+      }
     });
   });
-}
-
+});
