@@ -164,8 +164,11 @@ document.addEventListener('DOMContentLoaded', function() {
   const analyticCircles = document.querySelectorAll('.analytic-circle');
   
   if (analyticCircles.length > 0) {
+    // Check if browser is Safari
+    const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+    
     analyticCircles.forEach(circle => {
-      // For touch devices
+      // For touch devices and Safari
       circle.addEventListener('touchstart', function(e) {
         e.stopPropagation();
         
@@ -200,6 +203,12 @@ document.addEventListener('DOMContentLoaded', function() {
           popup.classList.remove('show');
         }
       });
+      
+      // Special handling for Safari
+      if (isSafari) {
+        // Add specific class for Safari styling if needed
+        circle.classList.add('safari');
+      }
     });
     
     // Hide popup when touching elsewhere on touch devices
