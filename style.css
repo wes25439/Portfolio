@@ -952,7 +952,7 @@ html { font-size: 55%; }
 
 
 @media (max-width: 768px) {
-  .analytic-circle { grid-template-columns: repeat(2, 1fr); max-width: 680px; }
+  .analytics-section { grid-template-columns: repeat(2, 1fr); max-width: 680px; }
 }
 /* ---------- TWO-BY-TWO SERVICES GRID ---------- */
 /* keep your 2x2 grid, but responsive breakpoints */
