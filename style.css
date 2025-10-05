@@ -951,13 +951,16 @@ html { font-size: 55%; }
 /* analytics circles scale down */
 
 
+@media (max-width: 768px) {
+  .analytic-circle { grid-template-columns: repeat(2, 1fr); max-width: 680px; }
+}
 /* ---------- TWO-BY-TWO SERVICES GRID ---------- */
 /* keep your 2x2 grid, but responsive breakpoints */
 @media (max-width: 1024px) {
   .services-container { grid-template-columns: repeat(2, 1fr); max-width: 1000px; }
 }
 @media (max-width: 768px) {
-  .services-container { grid-template-columns: repeat(2, 1fr);  max-width: 680px; }
+  .services-container { grid-template-columns: 1fr; max-width: 680px; }
 }
 
 /* ---------- MOBILE NAV BEHAVIOR ---------- */
