@@ -803,6 +803,7 @@ section{
 
   .home-content h3 {
     font-size: 3rem;
+    margin-left: -20%;
   }
 
   .home-img img {
@@ -913,7 +914,7 @@ section{
 
   .analytics-section h1 {
     font-size: 3rem;
-    margin-top: 20rem;
+    margin-top: 3rem;
   }
 
   /* Services Section */
@@ -959,6 +960,35 @@ section{
     flex-direction: column;
     gap: 0.5rem;
   }
+  .skills-container {
+    width: 100vw; /* use full viewport width */
+    margin-left: -5vw; /* adjust to center visually */
+    padding: 0 5vw;
+  }
+
+  /* Ensure skill bars fill the container */
+  .skill-bar {
+    width: 100%;
+  }
+
+  /* Center the skill titles and align spacing */
+  .skill-header {
+    justify-content: space-between;
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-container {
+    width: 100vw;
+    margin-left: -5vw;
+    padding: 0 5vw;
+  }
+
+  .skill-bar {
+    width: 100%;
+  }
+
 }
 
 /* =============================== */
