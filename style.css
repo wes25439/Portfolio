@@ -919,13 +919,18 @@ section{
     margin-top: 20px;
   }
 
+  .circle-content span {
+    font-size: 3rem;
+
+  }
+
   .analytic-circle {
     width: 120px;
     height: 120px;
   }
 
   .circle-content i {
-    font-size: 2rem;
+    font-size: 3rem;
   }
 
   .analytics-section h1 {
