@@ -892,7 +892,13 @@ section{
   }
 }
 
-
+.circle-popup.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, -10px);
+  pointer-events: auto;
+  transition: all 0.3s ease;
+}
 
 
 

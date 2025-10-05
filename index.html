@@ -372,6 +372,26 @@
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="script.js"></script>
+    <script>
+  // Simple solution to hide popups when scrolling
+  let scrollTimer = null;
+  const popups = document.querySelectorAll('.circle-popup');
+  
+  window.addEventListener('scroll', function() {
+    // Hide all popups during scrolling
+    popups.forEach(popup => {
+      popup.classList.add('hidden');
+    });
+    
+    // Show popups again after scrolling stops
+    clearTimeout(scrollTimer);
+    scrollTimer = setTimeout(function() {
+      popups.forEach(popup => {
+        popup.classList.remove('hidden');
+      });
+    }, 150);
+  });
+</script>
     
 </html>
 
