@@ -143,29 +143,41 @@ text-wrap: nowrap;
 .gradient-button:hover{
   transform: scale(1.05);
 }
-
+/* Adjust "I'm a" position and control animation area */
 .text-animation {
-  font-size: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 3.5rem;
   font-weight: 600;
-  min-width: 280px;
+  position: relative;
+  margin-right: 10px; /* 🔹 Moves the whole line slightly to the left */
 }
 
 .text-animation span {
-  position: relative;
+  margin-left: 10px; /* Keeps spacing between “I’m a” and the changing word */
+  color: var(--main-color);
+  display: inline-block;
+  min-width: 220px; /* Prevents layout shift during word changes */
+  text-align: left;
+}
+
+/* Optional — cursor blink effect */
+.text-animation span::after {
+  content: "|";
+  animation: blink 0.6s infinite;
+  margin-left: 3px;
   color: var(--main-color);
 }
 
-.text-animation span::after {
-  content: "|";
-  animation: cursor 0.6s infinite alternate;
-}
-
-@keyframes cursor {
-  from {
-    opacity: 1;
-  }
-  to {
+@keyframes blink {
+  50% {
     opacity: 0;
+  }
+}
+@media (max-width: 768px) {
+  .text-animation span {
+    min-width: 150px;
   }
 }
 
