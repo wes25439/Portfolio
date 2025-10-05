@@ -159,4 +159,72 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   });
+  
+  // Enhanced popup handling for Safari and touch devices
+  const analyticCircles = document.querySelectorAll('.analytic-circle');
+  
+  if (analyticCircles.length > 0) {
+    analyticCircles.forEach(circle => {
+      // For touch devices
+      circle.addEventListener('touchstart', function(e) {
+        e.stopPropagation();
+        
+        // Remove show class from all other popups
+        analyticCircles.forEach(otherCircle => {
+          if (otherCircle !== circle) {
+            otherCircle.querySelector('.circle-popup')?.classList.remove('show');
+          }
+        });
+        
+        // Toggle current popup
+        const popup = this.querySelector('.circle-popup');
+        if (popup) {
+          popup.classList.toggle('show');
+        }
+      });
+      
+      // For mouse devices - enhanced hover support
+      circle.addEventListener('mouseenter', function() {
+        const popup = this.querySelector('.circle-popup');
+        if (popup) {
+          // Small delay to ensure smooth appearance
+          setTimeout(() => {
+            popup.classList.add('show');
+          }, 100);
+        }
+      });
+      
+      circle.addEventListener('mouseleave', function() {
+        const popup = this.querySelector('.circle-popup');
+        if (popup) {
+          popup.classList.remove('show');
+        }
+      });
+    });
+    
+    // Hide popup when touching elsewhere on touch devices
+    document.addEventListener('touchstart', function(e) {
+      if (!e.target.closest('.analytic-circle')) {
+        const popups = document.querySelectorAll('.circle-popup.show');
+        popups.forEach(popup => popup.classList.remove('show'));
+      }
+    }, { passive: true });
+    
+    // Hide popups when scrolling
+    let scrollTimer = null;
+    const popups = document.querySelectorAll('.circle-popup');
+    
+    window.addEventListener('scroll', function() {
+      // Hide all popups during scrolling
+      popups.forEach(popup => {
+        popup.classList.remove('show');
+      });
+      
+      // Show popups again after scrolling stops
+      clearTimeout(scrollTimer);
+      scrollTimer = setTimeout(function() {
+        // Popups will reappear on hover/touch
+      }, 150);
+    });
+  }
 });
