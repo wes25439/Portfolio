@@ -94,6 +94,7 @@ body{
   font-weight: 800;
   cursor: pointer;
   transition: 0.3 ease-in-out;
+  font-family: "Montserrat", sans-serif;
   
 
 }
@@ -733,6 +734,7 @@ section{
               inset 0 0 20px rgba(0, 0, 0, 0.5);
   position: relative;
   transition: transform 0.3s ease;
+  z-index: 20;
 }
 
 .analytic-circle:hover {
@@ -790,6 +792,109 @@ section{
   line-height: 1.8;
   color: #ccc;
 }
+/* =============================================== */
+/* 🔸 Circle Popup Styles (Fixed & Responsive)     */
+/* =============================================== */
+
+.analytic-circle {
+  position: relative; /* needed for absolute popup positioning */
+  z-index: 2;
+  overflow: visible; /* ensures popup can extend outside the circle */
+}
+
+/* Popup container */
+.circle-popup {
+  position: absolute;
+  bottom: 110%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(16, 16, 16, 0.95);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--main-color);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  width: 220px;
+  z-index: 9999; /* ✅ ensures popup appears above all other sections */
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 25px rgba(234, 88, 12, 0.6);
+  text-align: center;
+  pointer-events: none; /* prevents flicker when hovering */
+}
+
+/* Popup arrow */
+.circle-popup::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid var(--main-color);
+}
+
+/* Text inside popup */
+.circle-popup h4 {
+  color: var(--main-color);
+  margin-bottom: 0.5rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.circle-popup p {
+  font-size: 1.3rem;
+  line-height: 1.4;
+  color: #ccc;
+}
+
+/* Show popup on hover */
+.analytic-circle:hover .circle-popup {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, -10px);
+}
+
+/* Ensure surrounding containers don't clip popups */
+.about,
+.analytics-section,
+.circular-analytics {
+  position: relative;
+  overflow: visible; /* ✅ popups won’t be cut off */
+  z-index: 10;
+}
+
+/* Adjust positioning for better mobile experience */
+@media (max-width: 768px) {
+  .circle-popup {
+    width: 180px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.2rem;
+    padding: 1.2rem;
+  }
+
+  .circle-popup h4 {
+    font-size: 1.4rem;
+  }
+
+  .analytic-circle:hover .circle-popup {
+    transform: translate(-50%, -5px);
+  }
+}
+
+/* Small devices (extra tweaks) */
+@media (max-width: 480px) {
+  .circle-popup {
+    width: 160px;
+    font-size: 1.1rem;
+  }
+}
+
+
+
+
 
 /* ============================= */
 /* 📱 FULL RESPONSIVE DESIGN FIX */
