@@ -237,3 +237,53 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 });
+// Add this to your script.js file
+document.addEventListener('DOMContentLoaded', function() {
+    const contactForm = document.querySelector('#contact form');
+    
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const fullName = contactForm.querySelector('input[placeholder="Full Name"]').value;
+            const email = contactForm.querySelector('input[placeholder="Email"]').value;
+            const phone = contactForm.querySelector('input[placeholder="Phone Number"]').value;
+            const subject = contactForm.querySelector('input[placeholder="Subject"]').value;
+            const message = contactForm.querySelector('textarea[placeholder="Your Message"]').value;
+            
+            // Your WhatsApp number (replace with your actual number)
+            const phoneNumber = "254708808854"; 
+            
+            // Create enhanced message template with emojis and better formatting
+            const whatsappMessage = `🌟 *NEW MESSAGE FROM PORTFOLIO* 🌟%0A%0A`
+                + `👤 *Name:* ${encodeURIComponent(fullName)}%0A`
+                + `📧 *Email:* ${encodeURIComponent(email)}%0A`
+                + `📱 *Phone:* ${encodeURIComponent(phone)}%0A`
+                + `📌 *Subject:* ${encodeURIComponent(subject)}%0A%0A`
+                + `💬 *Message:*%0A${encodeURIComponent(message)}%0A%0A`
+                + `---%0A`
+                + `📩 *Sent via Portfolio Website*`;
+            
+            // Create WhatsApp URL
+            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${whatsappMessage}`;
+            
+            // Show sending message
+            const submitBtn = contactForm.querySelector('input[type="submit"]');
+            const originalBtnText = submitBtn.value;
+            submitBtn.value = "Sending... 🚀";
+            submitBtn.disabled = true;
+            
+            // Open WhatsApp in a new tab
+            window.open(whatsappUrl, '_blank');
+            
+            // Show confirmation message
+            alert('✅ Thank you! Your message has been sent via WhatsApp. We will get back to you soon. 🙏');
+            
+            // Reset form and button
+            contactForm.reset();
+            submitBtn.value = originalBtnText;
+            submitBtn.disabled = false;
+        });
+    }
+});
