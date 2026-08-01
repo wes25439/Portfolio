@@ -1,403 +1,522 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio Website</title>
-    <!-- Add this in your <head> section -->
-      <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="google-site-verification" content="w8jqnGvGPdI0OKAnC5jYOkKTD8z9JFpCTrod0jE5XVk" />
 
+  <!-- ========== PERFECT SEO ========== -->
+  <title>CodeWithWes | Final Year Projects, Hospital Management Systems & Custom Websites by Weston Obiria</title>
+  <meta name="description" content="CodeWithWes by Weston Obiria – Buy complete PHP MySQL final year projects, Hospital Management Systems with M-Pesa, custom business websites, and Computer Science assignments. Clean source code + full documentation. Kenya.">
+  <meta name="keywords" content="final year project PHP MySQL, hospital management system source code, CodeWithWes, Weston Obiria, computer science projects Kenya, M-Pesa integration, student projects for sale, full stack PHP, school management system, inventory system">
+  <meta name="author" content="Weston Obiria">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#ea580c">
+  <link rel="canonical" href="https://codewithwes.co.ke/">
 
-   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="style.css" />
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  </head>
-  <body class="body">
-    <header class="header">
-         
-      <a href="#home" class="logo">
-        <span class="big-c">C</span>ode by  <span>Wes</span>
-     </a>
-     
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://codewithwes.co.ke/">
+  <meta property="og:title" content="CodeWithWes | Practical Coding Projects & Final Year Systems">
+  <meta property="og:description" content="Complete Hospital Management System, student projects and custom websites with clean PHP MySQL source code. Ready for final year submissions.">
+  <meta property="og:image" content="https://codewithwes.co.ke/digital-transformation.png">
+  <meta property="og:site_name" content="CodeWithWes">
+  <meta property="og:locale" content="en_KE">
 
-      <i class="bx bx-menu" id="menu-icon"></i>
-         <nav class="navbar">
-              <a href="#home">Home</a>
-              <a href="#about">Skills</a>
-              <a href="#services">Services</a>
-              <a href="#projects">Projects</a>
-              <a href="#contact">Contact</a>
-        </nav>
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CodeWithWes | Practical Coding Projects">
+  <meta name="twitter:description" content="Buy ready-to-use PHP MySQL final year projects and management systems with source code.">
+  <meta name="twitter:image" content="https://codewithwes.co.ke/digital-transformation.png">
 
-        <a href="#contact">
-          <button class="gradient-button">Contact Me</button>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+  <!-- Fonts & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Weston Obiria",
+    "url": "https://codewithwes.co.ke",
+    "jobTitle": "Full Stack Developer & Coding Educator",
+    "description": "Creator of practical PHP MySQL systems for Computer Science students and businesses in Kenya.",
+    "sameAs": [
+      "https://www.youtube.com/@codewithWes",
+      "https://www.linkedin.com/in/weston-obiria-6b284a218",
+      "https://x.com/ObiriaWeston"
+    ],
+    "worksFor": {
+      "@type": "Organization",
+      "name": "CodeWithWes",
+      "url": "https://codewithwes.co.ke"
+    }
+  }
+  </script>
+</head>
+<body>
+  <!-- ========== HEADER ========== -->
+  <header class="header">
+    <a href="#home" class="logo">
+      <span class="big-c">C</span>ode with <span>Wes</span>
+    </a>
+
+    <i class="bx bx-menu" id="menu-icon" aria-label="Toggle menu"></i>
+    <nav class="navbar">
+      <a href="#home">Home</a>
+      <a href="#about">Skills</a>
+      <a href="#services">Services</a>
+      <a href="#websites">Websites</a>
+      <a href="#for-sale">Projects for Sale</a>
+      <a href="#assignments">Assignments</a>
+      <a href="#about-wes">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <a href="#contact">
+      <button class="gradient-button">Contact Me</button>
+    </a>
+  </header>
+
+  <!-- ========== HOME ========== -->
+  <section class="home" id="home">
+    <div class="home-content">
+      <h1>Hi, It's <span>Weston</span></h1>
+      <h3 class="text-animation">
+        I'm a <span></span>
+      </h3>
+      <p>
+        I build real-world software systems that Computer Science, IT and Diploma students use for final year projects, portfolios and learning. Clean source code + full documentation.
+      </p>
+
+      <div class="social-icons">
+        <a href="https://wa.me/254708808854" target="_blank" rel="noopener" aria-label="WhatsApp">
+          <i class="fa-brands fa-whatsapp"></i>
         </a>
-        
-      
-    </header>
-
-          <!-- home section -->
-         <section class="home" id="home">
-            <div class="home-content">
-               <h1>Hi, Its <span>Weston</span></h1>
-               <h3 class="text-animation">
-                I'm a <span></span>
-               </h3>
-               <p>
-                "I develop so you don’t have to—bringing your ideas to
-                 life with clean code, sleek design, and seamless functionality." 🚀
-               </p>
-
-                <div class="social-icons">
-                  <a href="whatsapp://send?phone=254708808854&text=Hello%20Weston!
-                    " target="_blank">
-                    <i class="fa-brands fa-whatsapp"></i>
-                  </a>
-
-                  <a href="https://www.linkedin.com/in/weston-obiria-6b284a218" target="_blank">
-                    <i class="fa-brands fa-linkedin"></i>
-                  </a>
-
-                  <a href="https://www.instagram.com/_nyabbz?igsh=MTl5MDM4Z3lqYWt4Mg==" target="_blank">
-                    <i class="fa-brands fa-instagram"></i>
-                  </a>
-
-                  <a href="https://x.com/ObiriaWeston?t=Snuiup4m4uWws1g1yf1a_A&s=08" target="_blank">
-                    <i class="fa-brands fa-x-twitter"></i>
-                  </a>
-                </div>
-
-              <div class="btn-group">
-                <a href="whatsapp://send?phone=254708808854&text=Hello%20Weston!
-                " class="btn">Hire</a>
-                <a href="#contact" class="btn">Contact</a>
-
-              </div>
-
-            </div>
-
-            <div class="home-img">
-              <img src="digital-transformation.png" alt="">
-            </div>
-           
-         </section>
-         <br>
-       
-         <br>
-
-         <div id="about"></div>
-   <!-- Skills section -->
-<section class="about" >
-  <!-- Left side (skills) -->
-  <div class="about-content">
-
-    
-    <div class="skills-container">
-       <h2>My <span>Skills</span></h2>
-      <div class="skill">
-        <div class="skill-header">
-          <div class="skill-name">Html  Css  JavaScript</div>
-          <div class="skill-percentage">0%</div>
-        </div>
-        <div class="skill-bar">
-          <div class="skill-progress" data-width="95"></div>
-        </div>
+        <a href="https://www.linkedin.com/in/weston-obiria-6b284a218" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+        <a href="https://www.instagram.com/_nyabbz" target="_blank" rel="noopener" aria-label="Instagram">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="https://x.com/ObiriaWeston" target="_blank" rel="noopener" aria-label="X / Twitter">
+          <i class="fa-brands fa-x-twitter"></i>
+        </a>
+        <a href="https://www.youtube.com/@codewithWes" target="_blank" rel="noopener" aria-label="YouTube">
+          <i class="fa-brands fa-youtube"></i>
+        </a>
       </div>
 
-      <div class="skill">
-        <div class="skill-header">
-          <div class="skill-name">Java</div>
-          <div class="skill-percentage">0%</div>
-        </div>
-        <div class="skill-bar">
-          <div class="skill-progress" data-width="60"></div>
-        </div>
-      </div>
-
-      <div class="skill">
-        <div class="skill-header">
-          <div class="skill-name">Network Administration</div>
-          <div class="skill-percentage">0%</div>
-        </div>
-        <div class="skill-bar">
-          <div class="skill-progress" data-width="90"></div>
-        </div>
-      </div>
-
-      <div class="skill">
-        <div class="skill-header">
-          <div class="skill-name">Web Development & Deployment</div>
-          <div class="skill-percentage">0%</div>
-        </div>
-        <div class="skill-bar">
-          <div class="skill-progress" data-width="80"></div>
-        </div>
-      </div>
-
-      <div class="skill">
-        <div class="skill-header">
-          <div class="skill-name">It Support</div>
-          <div class="skill-percentage">0%</div>
-        </div>
-        <div class="skill-bar">
-          <div class="skill-progress" data-width="95"></div>
-        </div>
-      </div>
-
-      <div class="skill">
-        <div class="skill-header">
-          <div class="skill-name">Cloud Computing</div>
-          <div class="skill-percentage">0%</div>
-        </div>
-        <div class="skill-bar">
-          <div class="skill-progress" data-width="65"></div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Right side (analytics circles + description) -->
-  <div class="analytics-section">
-
-     <h1>Attri<span>butes</span></h1>
-   <!-- Replace your existing circular-analytics div with this updated version -->
-<div class="circular-analytics">
-  <div class="analytic-circle">
-    <div class="circle-content">
-      <i class="fas fa-users"></i>
-      <span>Team Player</span>
-    </div>
-    <div class="circle-popup">
-        <i class="fas fa-users" style="color: orangered;"></i>
-      <p>Collaborative approach to projects with excellent communication skills</p>
-    </div>
-  </div>
-
-  <div class="analytic-circle">
-    <div class="circle-content">
-      <i class="fas fa-brain"></i>
-      <span>Innovative Thinking</span>
-    </div>
-    <div class="circle-popup">
-      <i class="fas fa-brain" style="color: orangered;"></i>
-      <p>Creative problem-solving with out-of-the-box solutions</p>
-    </div>
-  </div>
-
-  <div class="analytic-circle">
-    <div class="circle-content">
-      <i class="fas fa-shield-alt"></i>
-      <span>Persistence</span>
-    </div>
-    <div class="circle-popup">
-       <i class="fas fa-shield-alt" style="color: orangered;"></i>
-      <p>Determined to overcome challenges and achieve goals</p>
-    </div>
-  </div>
-
-  <div class="analytic-circle">
-    <div class="circle-content">
-      <i class="fas fa-bolt"></i>
-      <span>Rapid Response</span>
-    </div>
-    <div class="circle-popup">
-      <i class="fas fa-bolt" style="color: orangered;"></i>
-      <p>Quick to react and provide solutions in time-sensitive situations</p>
-    </div>
-  </div>
-</div>
-      
-        
-
-
-</section>
-<section class="services" id="services">
-  <h2 class="heading">Services</h2>
-  <div class="services-container">
-    
-    <!-- UI/UX Design -->
-    <div class="service-box">
-      <div class="service-info">
-        <i class="fa-solid fa-wand-magic-sparkles"></i>
-        <h4>UI / UX Design</h4>
-        <p>
-          I specialize in UI/UX design, creating intuitive and visually engaging digital experiences that prioritize usability and aesthetics. By focusing on user behavior and design principles, I develop solutions that enhance engagement, improve functionality, and deliver a smooth, enjoyable experience for end users.
-        </p>
+      <div class="btn-group">
+        <a href="https://wa.me/254708808854?text=Hello%20Weston%2C%20I%20want%20to%20hire%20you" class="btn">Hire Me</a>
+        <a href="#for-sale" class="btn btn-outline">Projects for Sale</a>
       </div>
     </div>
 
-    <!-- Frontend Development -->
-    <div class="service-box">
-      <div class="service-info">
+    <div class="home-img">
+      <img src="digital-transformation.png" alt="Weston Obiria - CodeWithWes Developer">
+    </div>
+  </section>
+
+  <!-- ========== SKILLS ========== -->
+  <section class="about" id="about">
+    <div class="about-content">
+      <div class="skills-container">
+        <h2>My <span>Skills</span></h2>
+
+        <div class="skill">
+          <div class="skill-header">
+            <div class="skill-name">HTML • CSS • JavaScript</div>
+            <div class="skill-percentage">0%</div>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" data-width="95"></div>
+          </div>
+        </div>
+
+        <div class="skill">
+          <div class="skill-header">
+            <div class="skill-name">PHP & MySQL</div>
+            <div class="skill-percentage">0%</div>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" data-width="92"></div>
+          </div>
+        </div>
+
+        <div class="skill">
+          <div class="skill-header">
+            <div class="skill-name">Full-Stack Web Development</div>
+            <div class="skill-percentage">0%</div>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" data-width="88"></div>
+          </div>
+        </div>
+
+        <div class="skill">
+          <div class="skill-header">
+            <div class="skill-name">Network Administration</div>
+            <div class="skill-percentage">0%</div>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" data-width="90"></div>
+          </div>
+        </div>
+
+        <div class="skill">
+          <div class="skill-header">
+            <div class="skill-name">IT Support & Deployment</div>
+            <div class="skill-percentage">0%</div>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" data-width="95"></div>
+          </div>
+        </div>
+
+        <div class="skill">
+          <div class="skill-header">
+            <div class="skill-name">Cloud Computing</div>
+            <div class="skill-percentage">0%</div>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" data-width="70"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="analytics-section">
+      <h1>Attri<span>butes</span></h1>
+      <div class="circular-analytics">
+        <div class="analytic-circle">
+          <div class="circle-content">
+            <i class="fas fa-users"></i>
+            <span>Team Player</span>
+          </div>
+          <div class="circle-popup">
+            <i class="fas fa-users" style="color: orangered;"></i>
+            <p>Collaborative approach with excellent communication skills</p>
+          </div>
+        </div>
+
+        <div class="analytic-circle">
+          <div class="circle-content">
+            <i class="fas fa-brain"></i>
+            <span>Innovative</span>
+          </div>
+          <div class="circle-popup">
+            <i class="fas fa-brain" style="color: orangered;"></i>
+            <p>Creative problem-solving with out-of-the-box solutions</p>
+          </div>
+        </div>
+
+        <div class="analytic-circle">
+          <div class="circle-content">
+            <i class="fas fa-shield-alt"></i>
+            <span>Persistent</span>
+          </div>
+          <div class="circle-popup">
+            <i class="fas fa-shield-alt" style="color: orangered;"></i>
+            <p>Determined to overcome challenges and achieve goals</p>
+          </div>
+        </div>
+
+        <div class="analytic-circle">
+          <div class="circle-content">
+            <i class="fas fa-bolt"></i>
+            <span>Fast Response</span>
+          </div>
+          <div class="circle-popup">
+            <i class="fas fa-bolt" style="color: orangered;"></i>
+            <p>Quick solutions in time-sensitive situations</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SERVICES (RESTYLED) ========== -->
+  <section class="services" id="services">
+    <h2 class="heading">What I <span>Offer</span></h2>
+    <div class="services-container">
+
+      <div class="service-box">
+        <div class="service-info">
+          <i class="fa-solid fa-laptop-code"></i>
+          <h4>Final Year Projects</h4>
+          <p>
+            Complete, production-ready PHP + MySQL systems (Hospital, School, Inventory, Billing) with full documentation, ERDs and clean source code perfect for academic submission.
+          </p>
+        </div>
+      </div>
+
+      <div class="service-box">
+        <div class="service-info">
+          <i class="fa-solid fa-globe"></i>
+          <h4>Custom Business Websites</h4>
+          <p>
+            Modern, fully responsive websites for businesses in Kenya. Fast loading, mobile-friendly, SEO optimized and ready for M-Pesa / payment integration.
+          </p>
+        </div>
+      </div>
+
+      <div class="service-box">
+        <div class="service-info">
+          <i class="fa-solid fa-graduation-cap"></i>
+          <h4>CompSci Assignments</h4>
+          <p>
+            Well-documented Computer Science & IT assignments, algorithms, databases, networking and web development practicals with explanations you can learn from.
+          </p>
+        </div>
+      </div>
+
+      <div class="service-box">
+        <div class="service-info">
+          <i class="fa-solid fa-code"></i>
+          <h4>Full-Stack Systems</h4>
+          <p>
+            Role-based access, authentication, dashboards, reports, inventory, billing and mobile money (M-Pesa) integrations built with clean PHP architecture.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========== WEBSITES (formerly Projects) ========== -->
+  <section class="projects" id="websites">
+    <h2 class="heading">Client <span>Websites</span></h2>
+    <p class="section-subtitle">Live websites I designed & developed for real businesses</p>
+
+    <div class="projects-box">
+      <div class="project-card">
+        <img src="images/gelky.png" alt="Gelky Labs laboratory equipment e-commerce website">
+        <h3>Gelky Labs</h3>
+        <p>Order all your laboratory equipment online with a clean e-commerce experience.</p>
+        <a href="https://gelky-labs.vercel.app" target="_blank" rel="noopener" class="btn">View Website</a>
+      </div>
+
+      <div class="project-card">
+        <img src="images/vinslaundry.png" alt="Vinns Laundry service website for small businesses">
+        <h3>Vinns Laundry</h3>
+        <p>Professional laundry service website built for small businesses in Kenya.</p>
+        <a href="https://vinns-laundry.vercel.app" target="_blank" rel="noopener" class="btn">View Website</a>
+      </div>
+
+      <div class="project-card">
+        <img src="images/apekssupp.png" alt="Apeks Supplies business supplies website" onerror="this.src='images/digital-transformation.png'">
+        <h3>Apeks Supplies</h3>
+        <p>Business supplies and equipment website – apekssuplies.co.ke</p>
+        <a href="https://apekssupplies.co.ke" target="_blank" rel="noopener" class="btn">View Website</a>
+      </div>
+
+      <div class="project-card">
+        <img src="images/odallo.png" alt="Odallo Guitars handcrafted instruments website" onerror="this.src='images/digital-transformation.png'">
+        <h3>Odallo Guitars</h3>
+        <p>Handcrafted guitars & musical instruments – elegant product showcase site.</p>
+        <a href="https://odalloguitars.vercel.app" target="_blank" rel="noopener" class="btn">View Website</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PROJECTS FOR SALE ========== -->
+  <!-- 
+    TO ADD A NEW PROJECT THIS WEEK:
+    1. Copy one full <div class="sale-card"> ... </div> block
+    2. Paste it inside .sale-container
+    3. Change the icon, title, tech, features list and Paystack link
+    That's it — the grid will automatically arrange the cards.
+  -->
+  <section class="for-sale" id="for-sale">
+    <h2 class="heading">Projects <span>for Sale</span></h2>
+    <p class="section-subtitle">Ready-to-use complete systems with full source code & documentation</p>
+
+    <div class="sale-container">
+
+      <!-- ===== CARD 1: Hospital Management System ===== -->
+      <div class="sale-card featured">
+        <div class="sale-badge">Featured</div>
+        <div class="sale-icon">
+          <i class="fa-solid fa-hospital"></i>
+        </div>
+        <h3>Super Medicare – Hospital Management System</h3>
+        <p class="sale-tech">PHP • MySQL • HTML • CSS • JavaScript</p>
+        <ul class="sale-features">
+          <li><i class="fa-solid fa-check"></i> Patient registration & 360° view</li>
+          <li><i class="fa-solid fa-check"></i> Appointments + live queue</li>
+          <li><i class="fa-solid fa-check"></i> Doctor consultations & prescriptions</li>
+          <li><i class="fa-solid fa-check"></i> Laboratory & Pharmacy modules</li>
+          <li><i class="fa-solid fa-check"></i> Billing (Cash, Card, Insurance, Mobile Money)</li>
+          <li><i class="fa-solid fa-check"></i> Ward, bed transfer & discharge</li>
+          <li><i class="fa-solid fa-check"></i> Fingerprint / Passkey authentication</li>
+          <li><i class="fa-solid fa-check"></i> Full Role-Based Access Control</li>
+          <li><i class="fa-solid fa-check"></i> Patient Portal</li>
+        </ul>
+        <p class="sale-note">Perfect for Final Year Projects • Includes full documentation & setup guide</p>
+        <a href="https://paystack.com/buy/super-medicare--complete-hospital-management-system-p-cqczmi" 
+           target="_blank" rel="noopener" class="btn btn-buy">
+          Buy Source Code
+        </a>
+      </div>
+
+      <!-- 
+      ===== TEMPLATE FOR NEXT PROJECT (copy & paste when ready) =====
+      <div class="sale-card">
+        <div class="sale-badge">New</div>
+        <div class="sale-icon">
+          <i class="fa-solid fa-school"></i>
+        </div>
+        <h3>School Management System</h3>
+        <p class="sale-tech">PHP • MySQL • HTML • CSS • JavaScript</p>
+        <ul class="sale-features">
+          <li><i class="fa-solid fa-check"></i> Feature one</li>
+          <li><i class="fa-solid fa-check"></i> Feature two</li>
+          <li><i class="fa-solid fa-check"></i> Feature three</li>
+        </ul>
+        <p class="sale-note">Perfect for Final Year Projects</p>
+        <a href="YOUR-PAYSTACK-LINK" target="_blank" rel="noopener" class="btn btn-buy">
+          Buy Source Code
+        </a>
+      </div>
+      -->
+
+    </div>
+
+    <p class="coming-soon">More systems (School, Inventory, Billing, Chama…) coming this week. Subscribe on YouTube for updates.</p>
+  </section>
+
+  <!-- ========== COMPSCI ASSIGNMENTS ========== -->
+  <section class="assignments" id="assignments">
+    <h2 class="heading">CompSci <span>Assignments</span></h2>
+    <p class="section-subtitle">Well-documented Computer Science & IT practicals you can learn from</p>
+
+    <div class="assignments-box">
+      <div class="assignment-card">
+        <i class="fa-solid fa-database"></i>
+        <h3>Database Design & SQL</h3>
+        <p>ER diagrams, normalization, complex queries, stored procedures and full project documentation.</p>
+      </div>
+      <div class="assignment-card">
+        <i class="fa-solid fa-network-wired"></i>
+        <h3>Networking Practicals</h3>
+        <p>Subnetting, routing, packet tracer labs, network security configurations with clear explanations.</p>
+      </div>
+      <div class="assignment-card">
+        <i class="fa-solid fa-code"></i>
+        <h3>Web Development Tasks</h3>
+        <p>HTML/CSS/JS, PHP forms, authentication, CRUD systems and responsive layouts.</p>
+      </div>
+      <div class="assignment-card">
         <i class="fa-solid fa-laptop-code"></i>
-        <h4>Frontend Development</h4>
-        <p>
-          I specialize in front-end development, bringing designs to life with clean, efficient, and scalable code. My expertise includes HTML, CSS, JavaScript, and modern frameworks like React and Vue.js, ensuring responsive and high-performance web applications.
-        </p>
+        <h3>Algorithms & Programming</h3>
+        <p>Data structures, sorting, searching, OOP in Java/PHP with step-by-step solutions.</p>
       </div>
     </div>
 
-    <!-- IT Support -->
-    <div class="service-box">
-      <div class="service-info">
-        <i class="fa-solid fa-headset"></i>
-        <h4>IT Support</h4>
-        <p>
-          I provide professional IT support services, ensuring seamless operation of computer systems, networks, and software applications. My experience includes troubleshooting, maintenance, and system optimization to improve performance and prevent downtime in both office and cloud environments.
-        </p>
-      </div>
+    <div class="assignment-cta">
+      <p>Need a specific assignment done with full explanation?</p>
+      <a href="https://wa.me/254708808854?text=Hi%20Weston%2C%20I%20need%20help%20with%20a%20CompSci%20assignment" class="btn">Request Assignment</a>
+    </div>
+  </section>
+
+  <!-- ========== ABOUT + FAQ (SEO content depth) ========== -->
+  <section class="about-faq" id="about-wes">
+    <h2 class="heading">About <span>CodeWithWes</span></h2>
+    <div class="about-text">
+      <p>
+        CodeWithWes is a practical coding brand by <strong>Weston Obiria</strong>, a full-stack developer based in Kenya. 
+        We build real-world software systems that Computer Science, IT and Diploma students use for final year projects, 
+        portfolios and learning. Every system comes with clean PHP + MySQL source code, full documentation, ER diagrams 
+        and setup guides so you can understand, present and customize the project with confidence.
+      </p>
+      <p>
+        Whether you need a complete Hospital Management System, a custom business website, or help with CompSci 
+        assignments, the focus is always the same: production-style code that actually works and is ready to deploy.
+      </p>
     </div>
 
-    <!-- Cloud Computing -->
-    <div class="service-box">
-      <div class="service-info">
-        <i class="fa-solid fa-cloud"></i>
-        <h4>Cloud Computing</h4>
-        <p>
-          I design and manage cloud-based solutions using platforms such as AWS and Alibaba Cloud. From scalable hosting to database management and AI integrations, I help businesses leverage the cloud to enhance flexibility, reduce costs, and improve system reliability.
-        </p>
+    <h3 class="faq-heading">Frequently Asked Questions</h3>
+    <div class="faq-list">
+      <div class="faq-item">
+        <h4>What do I get when I buy a project?</h4>
+        <p>Full source code (PHP, MySQL, HTML, CSS, JavaScript), database file, setup documentation, and feature list. Ready to run on localhost or a live server.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Are these suitable for final year submission?</h4>
+        <p>Yes. The systems are built as complete, working applications with proper structure, role-based access, reports and documentation that lecturers expect.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Do you include M-Pesa or payment integration?</h4>
+        <p>Several systems support mobile money and payment flows. Check the feature list of each project, or request a custom integration.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Can you customize a system for my requirements?</h4>
+        <p>Yes. Message on WhatsApp with your requirements and we can adjust modules, branding or add new features.</p>
+      </div>
+      <div class="faq-item">
+        <h4>How do I get support after purchase?</h4>
+        <p>Reach out via WhatsApp or the contact form. Setup help and clarification on the code are available after you buy.</p>
       </div>
     </div>
+  </section>
 
-  </div>
-</section>
+  <!-- ========== CONTACT ========== -->
+  <section class="contact" id="contact">
+    <h2 class="heading">Contact <span>Me</span></h2>
+    <p class="section-subtitle">Let’s discuss your project or final year system</p>
 
-        <section class="projects" id="projects">
-          <h2 class="heading">My Projects</h2>
-          
-          <div class="projects-box"> <!-- Wrap all project cards in this div -->
-              <div class="project-card">
-                  <img src="gelky.png" alt="">
-                  <h3>Project 1</h3>
-                  <p>
-                    Gelky Labs order all your lab equipment online.
-                  </p>
-                  <a href="https://wes25439.github.io/Wes2/" target="_blank" class="btn">Review project</a>
+    <form id="contact-form">
+      <div class="input-group">
+        <div class="input-box">
+          <input type="text" placeholder="Full Name" required>
+          <input type="email" placeholder="Email" required>
+        </div>
+        <div class="input-box">
+          <input type="tel" placeholder="Phone Number">
+          <input type="text" placeholder="Subject">
+        </div>
+      </div>
 
-              </div>
-      
-              <div class="project-card">
-                  <img src="vinns.png" alt="">
-                  <h3>Project 2</h3>
-                  <p>
-                    Laundry service for small businesses.
-                  </p>
-                  <a href="https://vinns-laundry.vercel.app/" target="_blank" class="btn">Review project</a>
-              </div>  
-      
-              <div class="project-card">
-                  <img src="incredibox.png" alt="">
-                  <h3>Project 3</h3>
-                  <p>
-                    Make your music to reality
-                  </p>
-                  <a href="https://www.incredibox.com/" target="_blank" class="btn">Review project</a>
-              </div>
-      
-              
-          </div>
-      </section>
-      
-      <section class="contact" id="contact">
-        <h2 class="heading">Contact <span>Me</span></h2>
-      
-        <form action="#">
-          <div class="input-group">
-            <div class="input-box">
-              <input type="text" placeholder="Full Name" required>
-              <input type="email" placeholder="Email" required>
-            </div>
-            <div class="input-box">
-              <input type="number" placeholder="Phone Number">
-              <input type="text" placeholder="Subject">
-            </div>
-          </div>
-      
-          <div class="input-group-2">
-            <textarea placeholder="Your Message" rows="5" required></textarea>
-            <input type="submit" value="Send Message" class="btn">
-          </div>
-        </form>
-      </section>
-      
-     
-<!-- Skills section -->
-<!-- Skills section -->
+      <div class="input-group-2">
+        <textarea placeholder="Your Message" rows="6" required></textarea>
+        <input type="submit" value="Send via WhatsApp" class="btn">
+      </div>
+    </form>
+  </section>
 
-       <footer class="footer">
-             <div class="social-icons">
-                  <a href="whatsapp://send?phone=254708808854&text=Hello%20Weston!
-                    " target="_blank">
-                    <i class="fa-brands fa-whatsapp"></i>
-                  </a>
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="social-icons">
+      <a href="https://wa.me/254708808854" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+      <a href="https://www.linkedin.com/in/weston-obiria-6b284a218" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+      <a href="https://www.instagram.com/_nyabbz" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://x.com/ObiriaWeston" target="_blank" rel="noopener" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+      <a href="https://www.youtube.com/@codewithWes" target="_blank" rel="noopener" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+    </div>
 
-                  <a href="https://www.linkedin.com/in/weston-obiria-6b284a218" target="_blank">
-                    <i class="fa-brands fa-linkedin"></i>
-                  </a>
+    <ul class="list">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#websites">Websites</a></li>
+      <li><a href="#for-sale">Projects for Sale</a></li>
+      <li><a href="#assignments">Assignments</a></li>
+      <li><a href="#about-wes">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
 
-                  <a href="https://www.instagram.com/_nyabbz?igsh=MTl5MDM4Z3lqYWt4Mg==" target="_blank">
-                    <i class="fa-brands fa-instagram"></i>
-                  </a>
+    <p class="copyright">
+      © <span id="year"></span> Code with Wes • Weston Obiria • All rights reserved
+    </p>
+  </footer>
 
-                  <a href="https://x.com/ObiriaWeston?t=Snuiup4m4uWws1g1yf1a_A&s=08" target="_blank">
-                    <i class="fa-brands fa-x-twitter"></i>
-                  </a>
-                </div>
-          
-
-
-          <ul class="list">
-
-            <li>
-              <a href="#">FAQ</a>
-            </li>
-
-            <li>
-              <a href="#services">Services</a>
-           </li>
-
-           <li>
-            <a href="#about">About Me</a>
-              </li>
-
-            <li>
-            <a href="#projects">Projects</a>
-           </li>
-
-            <li>
-              <a href="#contact">Contact</a>
-            </li>
-         </ul> 
-
-
-            <p class="copyright">
-               Weston Obiria || All rights reserved
-            </p>
-       </footer>
-       
-
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="script.js"></script>
-    <script>
-  // Simple solution to hide popups when scrolling
-  let scrollTimer = null;
-  const popups = document.querySelectorAll('.circle-popup');
-  
-  window.addEventListener('scroll', function() {
-    // Hide all popups during scrolling
-    popups.forEach(popup => {
-      popup.classList.add('hidden');
-    });
-    
-    // Show popups again after scrolling stops
-    clearTimeout(scrollTimer);
-    scrollTimer = setTimeout(function() {
-      popups.forEach(popup => {
-        popup.classList.remove('hidden');
-      });
-    }, 150);
-  });
-</script>
-    
+  <script src="script.js"></script>
+</body>
 </html>
