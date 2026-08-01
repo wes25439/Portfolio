@@ -1,10 +1,10 @@
 // ========== TEXT ANIMATION ==========
 const words = [
   "Full-Stack Developer",
-  "PHP Specialist",
+  "Support specialist",
   "Final Year Expert",
   "Web Designer",
-  "Systems Builder",
+  "Systems developer",
   "Coding Educator"
 ];
 

@@ -17,7 +17,7 @@
 }
 
 html {
-  font-size: 62.5%;
+  font-size: 56%; /* slightly smaller base so desktop doesn't look zoomed */
   overflow-x: hidden;
 }
 
@@ -27,13 +27,26 @@ body {
   line-height: 1.6;
 }
 
+/* Prevent the whole site feeling oversized on large monitors */
+@media (min-width: 1400px) {
+  html {
+    font-size: 54%;
+  }
+}
+
+@media (min-width: 1800px) {
+  html {
+    font-size: 52%;
+  }
+}
+
 /* ========== HEADER ========== */
 .header {
   position: fixed;
   width: 100%;
   top: 0;
   left: 0;
-  padding: 2.2rem 10%;
+  padding: 1.6rem 8%;
   background: rgba(0, 0, 0, 0.75);
   backdrop-filter: blur(12px);
   display: flex;
@@ -44,7 +57,7 @@ body {
 }
 
 .logo {
-  font-size: 2.6rem;
+  font-size: 2.3rem;
   color: var(--text-color);
   font-weight: 800;
   font-family: "Montserrat", sans-serif;
@@ -116,12 +129,12 @@ span {
 /* ========== SECTIONS ========== */
 section {
   min-height: auto;
-  padding: 9rem 10% 6rem;
+  padding: 7.5rem 9% 5rem;
 }
 
 .heading {
   text-align: center;
-  font-size: 5.5rem;
+  font-size: 4.4rem;
   margin-bottom: 1.5rem;
   color: white;
 }
@@ -155,21 +168,21 @@ section {
 }
 
 .home-content h1 {
-  font-size: 5.5rem;
+  font-size: 4.6rem;
   font-weight: 700;
   line-height: 1.15;
   margin-bottom: 1rem;
 }
 
 .home-content h3 {
-  font-size: 2.8rem;
+  font-size: 2.4rem;
   margin-bottom: 1.5rem;
 }
 
 .text-animation {
   display: flex;
   align-items: center;
-  font-size: 2.8rem;
+  font-size: 2.4rem;
   font-weight: 600;
 }
 
@@ -201,8 +214,8 @@ section {
 }
 
 .home-img img {
-  width: 32rem;
-  height: 32rem;
+  width: 28rem;
+  height: 28rem;
   object-fit: cover;
   border-radius: 2rem;
   box-shadow: 0 0 40px rgba(234, 88, 12, 0.35);
@@ -289,7 +302,7 @@ section {
 }
 
 .skills-container h2 {
-  font-size: 4.5rem;
+  font-size: 3.8rem;
   margin-bottom: 3rem;
 }
 
@@ -337,7 +350,7 @@ section {
 }
 
 .analytics-section h1 {
-  font-size: 4.5rem;
+  font-size: 3.8rem;
   margin-bottom: 3rem;
   text-align: center;
 }
