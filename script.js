@@ -118,6 +118,33 @@ document.addEventListener("DOMContentLoaded", function () {
       link.addEventListener("click", closeMenu);
     });
 
+    const drops = navbar.querySelectorAll(".nav-drop");
+    drops.forEach((drop) => {
+      const dropBtn = drop.querySelector(".nav-drop-btn");
+      if (!dropBtn) return;
+      dropBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        drops.forEach((other) => {
+          if (other !== drop) {
+            other.classList.remove("open");
+            other.querySelector(".nav-drop-btn")?.setAttribute("aria-expanded", "false");
+          }
+        });
+        const open = drop.classList.toggle("open");
+        dropBtn.setAttribute("aria-expanded", open ? "true" : "false");
+      });
+    });
+    document.addEventListener("click", (e) => {
+      if (window.innerWidth <= 1200) return;
+      if (!e.target.closest(".nav-drop")) {
+        drops.forEach((drop) => {
+          drop.classList.remove("open");
+          drop.querySelector(".nav-drop-btn")?.setAttribute("aria-expanded", "false");
+        });
+      }
+    });
+
     // Close when clicking outside the menu
     document.addEventListener("click", (e) => {
       if (
@@ -130,9 +157,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Close menu on scroll
   window.addEventListener("scroll", () => {
-    if (navbar && navbar.classList.contains("show")) {
+    if (window.innerWidth > 1200 && navbar && navbar.classList.contains("show")) {
       closeMenu();
     }
   });
@@ -210,6 +236,176 @@ document.addEventListener("DOMContentLoaded", function () {
         submitBtn.value = originalText;
         submitBtn.disabled = false;
       }, 1500);
+    });
+  }
+
+  // ========== ADVANCED PROJECTS CATALOG ==========
+  const grid = document.getElementById("projects-grid");
+  if (grid) {
+    const cards = Array.from(grid.querySelectorAll(".adv-card"));
+    const searchInput = document.getElementById("project-search");
+    const categorySelect = document.getElementById("category-filter");
+    const loadMoreBtn = document.getElementById("load-more");
+    const emptyState = document.getElementById("empty-state");
+    const resetBtn = document.getElementById("reset-filters");
+    const resultsCount = document.getElementById("results-count");
+    const INITIAL_VISIBLE = 6;
+    let visibleLimit = INITIAL_VISIBLE;
+
+    function isFiltering() {
+      const q = (searchInput?.value || "").trim();
+      const cat = categorySelect?.value || "all";
+      return q.length > 0 || cat !== "all";
+    }
+
+    function cardMatches(card) {
+      const q = (searchInput?.value || "").trim().toLowerCase();
+      const cat = categorySelect?.value || "all";
+      const hay = [
+        card.dataset.title || "",
+        card.dataset.category || "",
+        card.dataset.tech || "",
+        card.textContent || ""
+      ].join(" ").toLowerCase();
+
+      const catOk = cat === "all" || card.dataset.category === cat;
+      const textOk = !q || hay.includes(q);
+      return catOk && textOk;
+    }
+
+    function renderCatalog() {
+      const filtering = isFiltering();
+      const matches = cards.filter(cardMatches);
+      let shown = 0;
+
+      cards.forEach((card) => {
+        const match = cardMatches(card);
+        const withinLimit = filtering || shown < visibleLimit;
+        if (match && withinLimit) {
+          const wasHidden = card.classList.contains("is-hidden");
+          card.classList.remove("is-hidden");
+          if (wasHidden) {
+            card.classList.remove("is-revealing");
+            void card.offsetWidth;
+            card.classList.add("is-revealing");
+          }
+          shown += 1;
+        } else {
+          card.classList.add("is-hidden");
+          card.classList.remove("is-revealing");
+        }
+      });
+
+      if (emptyState) emptyState.hidden = matches.length !== 0;
+      if (loadMoreBtn) {
+        loadMoreBtn.parentElement.style.display =
+          !filtering && matches.length > visibleLimit ? "block" : "none";
+      }
+      if (resultsCount) {
+        resultsCount.textContent =
+          matches.length === cards.length
+            ? `Showing ${shown} of ${cards.length} Laravel systems`
+            : `${matches.length} project${matches.length === 1 ? "" : "s"} match your filters`;
+      }
+    }
+
+    searchInput?.addEventListener("input", () => {
+      visibleLimit = INITIAL_VISIBLE;
+      renderCatalog();
+    });
+    categorySelect?.addEventListener("change", () => {
+      visibleLimit = INITIAL_VISIBLE;
+      renderCatalog();
+    });
+    loadMoreBtn?.addEventListener("click", () => {
+      visibleLimit = cards.length;
+      renderCatalog();
+    });
+    resetBtn?.addEventListener("click", () => {
+      if (searchInput) searchInput.value = "";
+      if (categorySelect) categorySelect.value = "all";
+      visibleLimit = INITIAL_VISIBLE;
+      renderCatalog();
+    });
+
+    renderCatalog();
+
+    // Quote modal
+    const overlay = document.getElementById("quote-overlay");
+    const projectField = document.getElementById("quote-project");
+    const formView = document.getElementById("quote-form-view");
+    const successView = document.getElementById("quote-success");
+    const quoteForm = document.getElementById("quote-form");
+    const successProject = document.getElementById("success-project");
+
+    function openQuote(title) {
+      if (!overlay) return;
+      if (projectField) projectField.value = title;
+      formView.hidden = false;
+      successView.hidden = true;
+      quoteForm?.reset();
+      if (projectField) projectField.value = title;
+      overlay.hidden = false;
+      document.body.classList.add("modal-open");
+      document.getElementById("quote-name")?.focus();
+    }
+
+    function closeQuote() {
+      if (!overlay) return;
+      overlay.hidden = true;
+      document.body.classList.remove("modal-open");
+    }
+
+    grid.querySelectorAll(".quote-btn").forEach((btn) => {
+      btn.addEventListener("click", () => openQuote(btn.dataset.project || ""));
+    });
+
+    document.getElementById("quote-close")?.addEventListener("click", closeQuote);
+    document.getElementById("quote-done")?.addEventListener("click", closeQuote);
+    overlay?.addEventListener("click", (e) => {
+      if (e.target === overlay) closeQuote();
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && overlay && !overlay.hidden) closeQuote();
+    });
+
+    quoteForm?.addEventListener("submit", (e) => {
+      e.preventDefault();
+      if (!quoteForm.checkValidity()) {
+        quoteForm.reportValidity();
+        return;
+      }
+
+      const project = (projectField?.value || "").trim();
+      const name = (document.getElementById("quote-name")?.value || "").trim();
+      const email = (document.getElementById("quote-email")?.value || "").trim();
+      const org = (document.getElementById("quote-org")?.value || "").trim();
+      const budget = (document.getElementById("quote-budget")?.value || "").trim();
+      const timeline = (document.getElementById("quote-timeline")?.value || "").trim();
+
+      const phoneNumber = "254708808854";
+      const whatsappMessage =
+        `*NEW PROJECT QUOTE — CodeWithWes*%0A%0A` +
+        `*Project:* ${encodeURIComponent(project)}%0A` +
+        `*Name:* ${encodeURIComponent(name)}%0A` +
+        `*Email:* ${encodeURIComponent(email)}%0A` +
+        `*Institution / Company:* ${encodeURIComponent(org || "—")}%0A` +
+        `*Budget:* ${encodeURIComponent(budget)}%0A` +
+        `*Timeline:* ${encodeURIComponent(timeline)}%0A%0A` +
+        `---%0ASent from codewithwes.co.ke/more-projects.html`;
+
+      const whatsappUrl = `https://wa.me/${phoneNumber}?text=${whatsappMessage}`;
+
+      if (successProject) successProject.textContent = project;
+      formView.hidden = true;
+      successView.hidden = false;
+
+      // Open WhatsApp with all form details prefilled
+      window.open(whatsappUrl, "_blank");
+
+      // Also update the success-screen WhatsApp button so the same details are kept
+      const successWa = successView.querySelector('a[href*="wa.me"]');
+      if (successWa) successWa.href = whatsappUrl;
     });
   }
 });
