@@ -1,5 +1,10 @@
 User-agent: *
 Allow: /
 
-# Sitemap
+# Primary pages
+Allow: /index.html
+Allow: /more-projects.html
+Allow: /images/
+Allow: /downloads/
+
 Sitemap: https://codewithwes.co.ke/sitemap.xml
