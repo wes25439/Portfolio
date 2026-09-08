@@ -42,8 +42,8 @@ if (spanElement) {
 // ========== MAIN DOM READY ==========
 document.addEventListener("DOMContentLoaded", function () {
   // Year in footer
-  const yearEl = document.getElementById("year");
-  if (yearEl) yearEl.textContent = new Date().getFullYear();
+ const yearEl = document.getElementById("year");
+if (yearEl) yearEl.textContent = "2025";
 
   // ========== SKILL BARS ==========
   function animateSkillBars() {
