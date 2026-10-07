@@ -2131,3 +2131,47 @@ body.modal-open {
     gap: 1.2rem 1.6rem;
   }
 }
+
+/* Chrome mobile: stop skills collapsing and riding up into the hero */
+@media (max-width: 1200px) {
+  .about {
+    align-items: stretch;
+    justify-content: flex-start;
+    width: 100%;
+  }
+
+  .about-content,
+  .analytics-section {
+    flex: none;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .skills-container,
+  .skill,
+  .skill-bar {
+    width: 100%;
+  }
+
+  .home {
+    min-height: 100svh;
+    min-height: 100dvh;
+    justify-content: center;
+  }
+
+  section {
+    overflow-x: clip;
+  }
+}
+
+@media (max-width: 430px) {
+  .home {
+    min-height: 100svh;
+    min-height: 100dvh;
+  }
+
+  .circular-analytics {
+    max-width: 100%;
+  }
+}
